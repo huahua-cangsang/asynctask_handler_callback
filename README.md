@@ -45,7 +45,7 @@ public class DownLoadImage {
 }
 
 
- ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+ ![image]()
 
 
 ### 链接  
