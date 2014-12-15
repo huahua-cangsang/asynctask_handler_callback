@@ -3,14 +3,12 @@
 
 
 ### 1，这是一个异步下载图片的类，其中用到了接口回调的方法
+
 public class DownLoadImage {
-
     String image_path;
-
     public DownLoadImage(String image_path) {
         this.image_path = image_path;
     }
-
     public void loadImage(final ImageCallBack imageCallBack) {
         final Handler handler = new Handler() {
             @Override
@@ -19,9 +17,7 @@ public class DownLoadImage {
                 Drawable drawable= (Drawable) msg.obj;
                 imageCallBack.getImage(drawable);
             }
-
         };
-
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -30,22 +26,20 @@ public class DownLoadImage {
                     Message message=Message.obtain();
                     message.obj=drawable;
                     handler.sendMessage(message);
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }).start();
     }
-
     //接口的回调方式
     public interface ImageCallBack {
         public void getImage(Drawable drawable);
     }
-}
+    }
 
 
- ![image]()
+ ![image](https://github.com/huahua-cangsang/asynctask_handler_callback/blob/master/handler/handle.gif)
 
 
 ### 链接  
